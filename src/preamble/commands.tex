@@ -1,0 +1,69 @@
+\newcommand{\fancytitle}[2]{\begin{titlepage}
+    \pagecolor{BlueViolet}
+    \color{white}
+	\centering
+
+	\scshape
+
+	\vspace*{\baselineskip}
+
+
+	\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+	\rule{\textwidth}{0.4pt}
+
+	\vspace{\baselineskip}
+
+	{\Huge #1}
+
+	\vspace{0.50\baselineskip}
+
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+	\rule{\textwidth}{1.6pt}
+
+	\vspace{\baselineskip}
+
+	{\large #2}
+
+	\vspace*{3\baselineskip}
+\end{titlepage}
+\nopagecolor}
+
+\renewcommand{\LettrineFontHook}{\initfamily\selectfont}
+
+\newcommand{\pageornament}[2]{%
+\pdfpageheight=\paperheight
+\begin{tikzpicture}[remember picture, overlay]
+\color{#2}
+\node[anchor=north west] at (current page.north west){%
+    \pgfornament[width=2cm]{#1}};
+\node[anchor=north east] at (current page.north east){%
+    \pgfornament[width=2cm,symmetry=v]{#1}};
+\node[anchor=south west] at (current page.south west){%
+    \pgfornament[width=2cm,symmetry=h]{#1}};
+\node[anchor=south east] at (current page.south east){%
+    \pgfornament[width=2cm,symmetry=c]{#1}};
+\end{tikzpicture} }
+
+\newcommand{\say}[1]{``#1''}
+\newcommand\subfigcaption[1]{\phantomcaption%
+       \caption*{\figurename~\thefigure\thesubfigure: #1}}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+
+
+\newcommand{\dn}[1]{\textsubscript{#1}}
+\newcommand{\up}[1]{\textsuperscript{#1}}
+% Music commands
+
+\newcommand{\BWV}[1]{[\footnotesize BWV \small #1]}
+\newcommand{\bwv}[1]{\footnotesize BWV \small #1}
+\newcommand{\degree}[1]{$\smash{\mathbf{\hat{\textbf{#1}}}}$}
+\newcommand*{\addrow}[1]{\mathbf{#1}\\}
+\newcommand{\figured}[1]{\raisebox{\depth}{$\smash{\begingroup\renewcommand*{\arraystretch}{0.4}\begin{smallmatrix*}[r]\forcsvlist{\addrow}{#1}\end{smallmatrix*}\endgroup}$}}
+\newcommand{\arrowup}[1]{$\vcenter{\hbox{\scaleobj{0.75}{\uparrow}}}$\textbf{#1}}
+\newcommand{\arrowdn}[1]{$\vcenter{\hbox{\scaleobj{0.75}{\downarrow}}}$\textbf{#1}}
+
+\newcolumntype{R}{>{\;}r<{}}
+\newcolumntype{L}{>{}l<{}}
+\newcolumntype{M}{R@{{} -- {}}L}

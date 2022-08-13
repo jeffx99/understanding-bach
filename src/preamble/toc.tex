@@ -1,0 +1,41 @@
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+\titlecontents{part}
+[1.1em]
+{}
+{\color{BlueViolet!90}\Large\sc \contentslabel[\bfseries\thecontentslabel]{0.8em}}
+{}
+{\color{BlueViolet!90}\hfill\contentspage[\large\bfseries\thecontentspage]}
+
+\titlecontents{chapter}
+[2.3em] % ie, 1.5em (chapter) + 2.3em
+{}
+{\color{BlueViolet!90}\large\sc\contentslabel[\thecontentslabel.]{1em}}
+{\hspace*{-2.3em}\color{BlueViolet!90}\large\sc}
+{\color{BlueViolet!90}\hfill\contentspage[\large\bfseries\thecontentspage]}
+
+\titlecontents{section}
+[4.0em] % ie, 1.5em (chapter) + 2.3em
+{}
+{\color{BlueViolet!90}\large\sc\contentslabel[\thecontentslabel.]{1.4em}\large}
+{\color{BlueViolet!90}\large\sc}
+{\color{BlueViolet!90}\dotfill\contentspage[\large\bfseries\thecontentspage]}
+
+\makeatletter
+\renewcommand{\tableofcontents}{%
+%
+\vspace*{20\p@}%
+\begin{tikzpicture}[remember picture, overlay]%
+\pgftext[right,x=15.84cm,y=0.2cm]{\color{BlueViolet!80}\Huge\sc\thefont
+\contentsname};%
+\draw[fill=BlueViolet!80,draw=BlueViolet!80] (13.85,-.75) rectangle (20,1);%
+\clip (13.85,-.75) rectangle (20,1);
+\pgftext[right,x=15.84cm,y=0.2cm]{\color{white}\Huge\sc\thefont
+\contentsname};%
+\end{tikzpicture}%
+\begin{tikzpicture}[remember picture, inner sep=5pt, overlay]
+\node[anchor=south, rotate=180] at ($(current page.north east)$){\color{BlueViolet!80}\pgfornament{69}};
+\end{tikzpicture}
+\vspace*{60\p@}%
+\@starttoc{toc}}
+\makeatother

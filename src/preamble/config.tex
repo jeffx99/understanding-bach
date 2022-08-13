@@ -1,0 +1,91 @@
+\titleformat{\chapter}[block]%
+        {\centering\scshape\HUGE}%
+        {\color{BlueViolet!75}\thefont\fontsize{20}{40}\selectfont\chaptername\hspace{10pt}\fontseries{n}\selectfont\thechapter\hspace{0pt}\\ \vspace{-42pt}\protect{\pgfornament[anchor=south, width=0.24\textwidth, symmetry=v, ydelta=5pt]{14}}{\color{Black}\fontsize{30}{40}\sc\thefont #1}\hspace{5pt}\protect{\pgfornament[anchor=south, width=0.24\textwidth, ydelta=5pt]{14}}}{0pt}
+        {} % put \chapterdecoration in the brackets once its done
+\titleformat{name=\chapter, numberless}[block]%
+        {\centering\scshape\HUGE}%
+        {\color{BlueViolet!75}\thefont\protect{\pgfornament[anchor=center, width=0.24\textwidth, symmetry=v, ydelta=-9pt]{14}}{\color{Black}\fontsize{30}{40}\sc\thefont #1}\hspace{5pt}\protect{\pgfornament[anchor=center, width=0.24\textwidth, ydelta=-9pt]{14}}}{0pt}
+        {} % put \chapterdecoration in the brackets once its done
+\titlespacing*{\chapter}
+	{0pt}{-30pt}{50pt}
+\titlespacing*{name=\chapter, numberless}
+	{0pt}{-22pt}{50pt}
+
+\titleformat{\part}[block]%
+        {\centering\scshape\HUGE}%
+        {\color{BlueViolet!75}\fontencoding{U}\fontfamily{cmr}\fontseries{m}\fontsize{60}{80}\selectfont\partname\hspace{15pt}\thepart\\{\color{Black}\fontsize{30}{40}\sc\thefont #1}}{0pt}
+        {}[] % put \chapterdecoration in the brackets once its done
+
+\titleformat{\section}
+	{\scshape\Large}
+	{\color{BlueViolet!75}\thesection\hspace{10pt}#1}{1em}
+	{}[]
+
+\titleformat{\subsection}
+	{\scshape\large}
+	{\color{BlueViolet!75}\pgfornament[width=13pt, anchor=south, opacity=0.5, ydelta=2pt]{10}\hspace{5pt}#1}{1em}
+	{}[]
+
+\newcommand\chapterdecoration{%
+\begin{tikzpicture}[remember picture,overlay,shorten >= -10pt]
+
+\coordinate (aux1) at ([yshift=-15pt]current page.north east);
+\coordinate (aux2) at ([yshift=-410pt]current page.north east);
+\coordinate (aux3) at ([xshift=-4.5cm]current page.north east);
+\coordinate (aux4) at ([yshift=-150pt]current page.north east);
+
+\begin{scope}[BlueViolet!50,line width=12pt,rounded corners=12pt]
+\draw
+  (aux1) -- coordinate (a)
+  ++(225:5) --
+  ++(-45:5.1) coordinate (b);
+\draw[shorten <= -10pt]
+  (aux3) --
+  (a) --
+  (aux1);
+\draw[opacity=0.6,BlueViolet,shorten <= -10pt]
+  (b) --
+  ++(225:2.2) --
+  ++(-45:2.2);
+\end{scope}
+\draw[BlueViolet,line width=8pt,rounded corners=8pt,shorten <= -10pt]
+  (aux4) --
+  ++(225:0.8) --
+  ++(-45:0.8);
+\begin{scope}[BlueViolet!70,line width=6pt,rounded corners=8pt]
+\draw[shorten <= -10pt]
+  (aux2) --
+  ++(225:3) coordinate[pos=0.45] (c) --
+  ++(-45:3.1);
+\draw
+  (aux2) --
+  (c) --
+  ++(135:2.5) --
+  ++(45:2.5) --
+  ++(-45:2.5) coordinate[pos=0.3] (d);
+\draw
+  (d) -- +(45:1);
+\end{scope}
+\end{tikzpicture}%
+}
+
+\fancypagestyle{plain}{\fancyhead[L,R]{}\renewcommand{\headrulewidth}{0pt}} % To clear page numbers from footer, and header line at the start of every chapter
+
+\pagestyle{fancy}
+\fancyhf{} % Clear header/footer
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[RE, LO]{\color{BlueViolet!90}\Large\sc\nouppercase\thechapter .\ \large\leftmark}
+\fancyfoot[RE, LO]{\color{BlueViolet!90}\bfseries\thepage}
+
+\everymath{\displaystyle}
+
+%\setlength{\parindent}{0em}
+\renewcommand{\baselinestretch}{1.10}
+
+
+\sloppy
+\hyphenpenalty=100000
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000

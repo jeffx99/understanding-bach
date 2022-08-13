@@ -1,0 +1,39 @@
+\documentclass[tikz, twoside, a4paper, 12pt]{book}
+
+\usepackage[table, dvipsnames]{xcolor}
+\usepackage[object=vectorian]{pgfornament}
+
+\input{preamble/packages.tex}
+\input{preamble/config.tex}
+\input{preamble/commands.tex}
+\input{preamble/toc.tex}
+
+%\usepackage{showframe}
+
+\begin{document}
+
+\thefont
+
+\newgeometry{centering}
+\fancytitle{The Music of J.S. Bach}{J. Mensah}
+\restoregeometry
+
+\thispagestyle{empty}
+\newpage
+\
+\newpage
+
+\pagestyle{empty}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\input{chapters/introduction.tex}
+
+
+\part{Form}
+\pagestyle{fancy}
+
+\input{chapters/phrases/phrases.tex}
+
+\end{document}

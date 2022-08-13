@@ -1,0 +1,49 @@
+\usepackage{ETbb}
+\usepackage[T1]{fontenc}
+%% The font package uses mweights.sty which has som issues with the
+%% \normalfont command. The following two lines fixes this issue.
+\let\oldnormalfont\normalfont
+\def\normalfont{\oldnormalfont\mdseries}
+\usepackage[all]{xy}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+\usepackage{hhline}
+\usepackage{arydshln}
+\usepackage{scalerel}
+
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage[font=small, figurename=Excerpt]{caption}
+\usepackage{subcaption}
+\usepackage{geometry}
+\usepackage{float}
+\usetikzlibrary{shadows,shapes.geometric}
+\usetikzlibrary{calc}
+\usepackage{enumerate}
+\usepackage[hidelinks, pdftex]{hyperref}
+\usepackage{titletoc}
+\usepackage{moresize}
+
+\usepackage{layout}
+\usepackage{anyfontsize}
+
+\usepackage[explicit, newparttoc]{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lettrine}
+
+\input Zallman.fd
+\newcommand*\initfamily{\usefont{U}{Zallman}{xl}{n}}
+\newcommand{\thefont}{}
+
+\setlength{\textheight}{630pt}
+\addtolength{\textwidth}{30pt}
+\addtolength{\evensidemargin}{-30pt}
+\setlength{\marginparwidth}{40pt}

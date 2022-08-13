@@ -1,0 +1,171 @@
+\section{Phrase Structure}
+
+The phrases(or incomplete subphrases) in a given piece of music tend to form small hierarchies with groups of ideas forming phrases, and groups of phrases forming larger, more complex structures. Phrases or subphrases that can be grouped together in this way often are related to each other according to one of a few common structural devices. Generally, any structure can be described in terms of a subphrase referred to as the \textbf{basic idea}(denoted by a bold \textbf{X}). This may be thought as the \say{seed} or \say{generator} for the entire phrase. The basic idea is generally stated at least twice in the phrase, although it may be ``transformed'' in a number of ways. Typically, a \textbf{complementary idea}(denoted by a bold \textbf{Y} or \textbf{Z}) is usually featured in addition to the basic idea. The most basic device does not utilize any repetition of the basic idea and simply pairs it with a complementary idea, which we represent as
+\begin{equation*}\label{fig:imitation_a}
+\begin{tabular}{rcc||}
+  I: \quad & \textbf{X} & \textbf{Y} \\
+\end{tabular} \, .
+\end{equation*}
+We informally refer to such a structure as a \textit{pair}. In the above diagram, the Roman numeral refers to a voice or a group of voices, and the boldface letters represent phrases or subphrases. The double vertical line at the end signals the end of the phrase, and usually an implied cadence.
+
+\subsection{Imitation}
+
+An imitative phrase structure involves a restatement(called the \textbf{imitation}) of the basic idea in another voice. The basic idea may be a complete phrase on its own, or a fragment of a phrase. When the basic idea is a phrase, the most common imitative structure is
+\begin{equation*}\label{fig:imitation_a}
+\begin{tabular}{rc|c||}
+  I: \quad & \textbf{X} & \textbf{Y} \\
+  II: \quad & (\textbf{Z}) & \hphantom{\up{*}}\textbf{X}\up{*}
+\end{tabular} \, .
+\tag{$\star$}
+\end{equation*}
+In this diagram, the asterisk typically represents transpostionin a different voice , generally by octave or a fifth. The vertical line represents the division between the \textbf{X} and \textbf{Y} phrases, at which point there may be an internal cadence. If present, \textbf{Y} may be related to \textbf{Z} by transposition as well. If \textbf{X} is an incomplete subphrase, then a common structure used to build a phrase from \textbf{X} is
+\begin{equation*}\label{fig:imitation_b}
+\begin{tabular}{rcc|cc||}
+I: \quad & \textbf{X}\dn{1} & \textbf{Y}\dn{1} &  \textbf{X}\dn{2}\!\! & \textbf{Y}\dn{2} \\
+II: \quad & (\textbf{Z}\dn{1}) & \textbf{X}\dn{1}\!\!\up{*} & (\textbf{Z}\dn{2}) & \textbf{X}\dn{2}\!\!\up{*}
+\end{tabular} \, .
+\tag{$\star\star$}
+\end{equation*}
+The change in subscript (1 $\to$ 2) typically represents transposition by unison or fifth in the same voice. This type of structure is characteristic of inventions; see Chapter \ref{} for more information. Often an imititative phrase structure is used to open a piece; when this happens the basic idea \textbf{X} is generally \textit{thematic}. In such cases we call \textbf{X} the \textbf{subject}, its imitation \textbf{X}\up{*} an \textbf{answer}, and \textbf{Y} a \textbf{countersubject}(which may not be thematic). Not every musical idea can yield a viable subject; while it is hard to say when an idea is open to imitation, we can in some circumstances rule out poor contenders.
+
+\begin{figure}[h]
+  \centering
+  \lilypondfile[staffsize=15]{chapters/phrases/excerpts/778.ly}
+  \caption{A subject-answer structure of the form \eqref{fig:imitation_b}, in which the subject starts and ends on \degree{5}, leading to a half cadence at the end of the first phrase. The end of the subject is altered in the second phrase in order to end on an authentic cadence.  \BWV{778}}
+\end{figure}
+
+For example, suppose one has a structure of the form \eqref{fig:imitation_a}, involving an internal cadence. If the end of the subject and the start of the answer coincide on the same beat, then it follows that they must contribute to the same harmony. As the subject must open the piece\footnote{Rarely, in fugues immediately succeeding another movement in a larger piece, the subject may begin on a different scale degree, as the key has been previously established.}, it must begin by implying a dominant or tonic harmony to confirm the key, usually through the use of degrees \degree{1}, \degree{3}, or \degree{5}. These conditions restrict what possible subjects are permissible, depending on the interval of imitation. For example, consider what happens in a two-voice texture when the answer is in the bass, an octave below the subject.  It would be unusual for the subject to end in a half cadence, as this creates the expectation for the answer to end on an authentic cadence, which is not possible given the interval of imitation. Thus, the subject should end with an authentic cadence, so the answer(and thus the subject) must begin\footnote{One must exercise some caution in determining this; typically this is the first essential note in the subject.} with \degree{1} or \degree{3}. If the subject begins with \degree{1}, then it may end on either \degree{1}, \degree{3}, or \degree{5}. However, if the subject begins on \degree{3}, it should end on \degree{1}, for ending on \degree{3} would double the third, and ending \degree{5} may leave the root omitted in a two-voice texture. Similar deductions may be made if the answer is an octave above.
+
+If the subject does not satisfy these conditions, then the subject--answer structure is usually modified so that there is a \say{gap} between subject and answer; in this way one may reach a desirable harmony by the time the answer is introduced. The gap between subject and answer is either filled by the start of the countersubject, or a short fragment of notes we refer to as a \textit{link}. The most natural way to create such a gap is by starting the subject on a weak beat, and ending the subject on a strong beat(typically the first beat of a measure); the length of the gap between subject and answer is equal to the amount of time \say{stolen} from the subject. When the length of this gap is larger than half a measure, the piece is usually written as beginning with an anacrusis.
+
+\begin{figure}
+  \centering
+  \lilypondfile[staffsize=15]{chapters/phrases/excerpts/883b.ly}
+  \caption{A subject starting partially through the first measure, allowing for a link between the subject and answer. In this instance, the link is necessary, as the subject ends with an authentic cadence in \textbf{f}$\sharp$, while the start of the answer emphasizes the key of \textbf{c}$\sharp$. \BWV{883b}}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\lilypondfile[noindent, staffsize=14]{chapters/phrases/excerpts/1015i.ly}
+\caption{An irregular subject-answer structure consisting of three subphrases, in which the subject starts and ends on \degree{1}. Two seperate countersubjects are introduced. \BWV{1015}}
+\end{figure}
+
+\subsection{Antecedent -- Consequent}
+
+The \textbf{antecedent-consequent} structure involves a typically symmetrical division of a large phrase into two smaller phrases; the former called the \textbf{antecedent} and the latter the \text{consequent}. The antecedent and consequent phrases both begin with an incomplete subphrase stating the basic idea, followed by a complementary idea. The two statements of the basic idea are typically identical, while the complementary idea is either altered significantly or entirely different. The antecedent phrase usually is concluded with a weaker cadence than the consequent phrase, which typically ends with a perfect authentic cadence. Like the subject-answer structure, the antecedent-consequent structure is typically used to open a piece; this is most commonly seen in dance forms. The structure can be represented as
+\begin{equation*}\label{fig:antecedent_consequent}
+\begin{tabular}{rcc|cc||}
+I: \quad & \textbf{X} & \textbf{Y} & \textbf{X}'\! & \textbf{Z}
+\end{tabular} \, .
+\end{equation*}
+The prime symbol in the above diagram typically represents an exact restatement.
+
+\begin{figure}
+  \hspace{-5pt}
+  \lilypondfile[staffsize=15]{chapters/phrases/excerpts/809vi.ly}
+  \caption{An antecendent-consequent phrase structure used in the opening of a menuet. \BWV{809}}
+\end{figure}
+
+\subsection{Presentation -- Continuation}
+Occasionally, one is presented with two consecutive statements of a basic idea---the \textbf{presentation}---followed by a \textbf{continuation} leading to a cadence. This structure may be diagrammed as
+\begin{equation*}\label{fig:antecedent_consequent}
+\begin{tabular}{rcc;{1.5pt/1pt}c||}
+I: \quad & \textbf{X}\dn{1} & \textbf{X}\dn{2} & \textbf{Y}\dn{(\textbf{X})}
+\end{tabular} \, .
+\end{equation*}
+The change in subscript (1 $\to$ 2) represents some transformation of the basic idea restated in the same voice, typically transposition by a step up or down. The parenthetical subscript on \textbf{Y} reflects the fact that the continuation often incorporates the basic idea in some fashion. It is not necessary(and usually is not the case) for the basic idea \textbf{X} to constitute a complete phrase.  The dashed vertical line represents the possibility for a cadence(typically weak) separating the presentation from continuation, even if \textbf{X} is incomplete. Generally, the structure is symmetric, meaning \textbf{Y} occupies twice the amount of time as \textbf{X}.
+\begin{figure}[h]
+  \centering
+  \lilypondfile[line-width=14\cm, staffsize=15]{chapters/phrases/excerpts/900.ly}
+  \caption{A presentation-continuation structure, in which the restatement \textbf{X}\up{*} is essentially a transposition up by step. The continuation \textbf{Y}\dn{\textbf{X}} makes use of the basic idea once more. \BWV{900}}
+  \label{}
+\end{figure}
+
+\subsection{Sequences \& Figurations}
+The last (and most common by far) structure we will discuss involves multiple consecutive repetitions of a basic idea. If with each repetition, the underlying harmony changes in a \say{predictable} manner, we call the structure a (harmonic) \textbf{sequence}, which may be diagrammed as
+\begin{equation*}\label{fig:sequence}
+\begin{tabular}{rc;{1.5pt/1pt}c;{1.5pt/1pt}c;{1.5pt/1pt}c||}
+I: \quad & \textbf{X}\dn{1} & \textbf{X}\dn{2} &  $\cdots$\! & \stretchrel*{(}{\strut}\textbf{Z}\dn{(\textbf{X})}\stretchrel{)}{\strut}
+\end{tabular} \, .
+\tag{$\dagger$}
+\end{equation*}
+The subscripts represent a different iteration of the basic idea, usually being related by transposition by a fixed interval. The dashed vertical line represents the possibility for a weak cadence after each iteration. This is typically the case for \textit{modulating} sequences; for such sequences if a cadence occurs after \textbf{X}\dn{1}, each subsequent iteration will be followed by a cadence as well. The sequence typical ends with an cadential idea \textbf{Z} which is based on \textbf{X}. Typically, there are two or three iterations of the basic idea; greater than three iterations runs the risk of being too repetitive.
+\begin{figure}[h]
+  \centering
+  \lilypondfile[staffsize=15]{chapters/phrases/excerpts/902.ly}
+  \caption{A sequence of the form \eqref{fig:sequence} built from a pair of ideas(blue, red) with three iterations. The phrase ends with a modification of the basic idea. \BWV{902}}
+  \label{fig:sequence_abstract}
+\end{figure}
+
+The overall harmonic progression of a sequence depends on the \say{relative} or \say{abstract} bass progression within \textbf{X}, and the interval of transposition between successive iterations. By \say{relative}, we refer to the series of bass motions within \textbf{X}, not making reference to any any particular note. Such progressions can be diagrammed on a clefless staff; for example, the abstract progression in Excerpt \ref{fig:sequence_abstract} is of the form
+\begin{center}
+  \begin{lilypond}[staffsize=16]
+    \new Staff \with {
+      \remove "Clef_engraver"
+      \remove "Time_signature_engraver"
+    }
+    <<
+    \relative { \clef bass \override Stem #'transparent = ##t s4 d b s8 }
+    \figures {
+      s4 <6 3>4 <6 5 3>4
+    }
+    >>
+  \end{lilypond} \raisebox{27.5pt}{.}
+  \vspace{-10pt}
+\end{center}
+The most common progressions involve two essential harmonies, in which case \textbf{X} may be thought as comprising a pair of subunits, often related by imitation, each corresponding to one of the harmonies in \textbf{X}.
+%\begin{table}
+%  \centering
+%  \renewcommand{\arraystretch}{1.3}
+%  \begin{tabular}{c|c|c|c|c|c|}
+
+%  \vspace{18.75pt} & \arrowup{2} & \arrowup{3} & \arrowup{4} & \arrowup{5} \\[-18.75pt] \hhline{~|*{4}{-}|}
+%  \arrowdn{2} & \cellcolor{gray!45} & \cellcolor{OrangeRed!50} & \cellcolor{OrangeRed!50} & \cellcolor{gray!45} \\ \hhline{~|----|}
+%  \arrowdn{3} & \cellcolor{BlueViolet!50} & \cellcolor{gray!45} & \cellcolor{OrangeRed!50} & \cellcolor{OrangeRed!50} \\ \hhline{~|----|}
+%  \arrowdn{4} & & & \cellcolor{gray!45} & \cellcolor{OrangeRed!50}  \\ \hhline{~|----|}
+%  \arrowdn{5} & & & \cellcolor{BlueViolet!50} & \cellcolor{gray!45} \\ %\hhline{~|----|}
+%  \end{tabular}
+%  \caption{}
+%\end{table}
+If the underlying harmony accompanying each repetition does not follow such harmonic formulae, but instead outlines a more \say{typical} harmonic progression, one may be able to say that the phrase simply consists of a \textit{melodic} sequence or \textbf{figuration} based on \textbf{X}, provided \textbf{X} carries a distinct melodic character.
+\begin{figure}[h]
+  \centering
+  \lilypondfile[staffsize=15]{chapters/phrases/excerpts/846a.ly}
+  \caption{A figuration outlining a typical harmonic progression. \BWV{846a}}
+\end{figure}
+
+\subsection{Compound Structures}
+
+It is instructive to look through some short pieces and determine the types of structural devices used.
+
+\begin{example}[\bwv{933}]
+Consider the Little Prelude in \textbf{d} minor from the Six Little Preludes, a \textit{binary} form prelude written in \raisebox{-3pt}{\lilypond[inline, staffsize=13]{\markup{\column{\line{\compound-meter #'(3 8)}}}}}. Table \ref{} shows the deconstruction the \textbf{A} section, which consists of 24 measures, into its constituent phrases. We first analyze the ``small-scale'' phrase structure.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{c|M|c|l}
+\hline\hline
+  & \multicolumn{2}{c|}{measures} & cadence & remarks \\ \hline
+1 & 1 & 4\up{+}   & \degree{4} -- \degree{3}  & \\ \hline
+2 & 5 & 9         & \degree{7} -- \degree{1}  & cadence on m. 8; no elision \\ \hline
+3 & 9 & 13        &	\degree{7} -- \degree{1}	&	cadence on m. 12; no elision; \textbf{e}$\flat$ introduced to tonicize \textbf{B}$\flat$  \\ \hline
+4 & 13 & 17       &	\degree{4} -- \degree{3}	& cadence on m. 16; no elision	\\ \hline
+5 & 17 & 21\up{+} &	\degree{7} -- \degree{1}	&	\\ \hline
+6 & 21 & 24       &	\cellcolor{gray!50}	&	authentic cadence; scalar motion from \degree{5} to \degree{1} in the bass \\ \hline
+\end{tabular}
+\end{table}
+
+The first phrase is simultaneously an example of an antecedent-consequent structure and an imitatitive structure, which may be diagrammed as
+\begin{equation*}
+\begin{tabular}{rcc|cc||}
+  I: \quad & \textbf{X}\dn{1} & \textbf{X}\dn{2} & \multicolumn{2}{c||}{\textbf{Y} ---\hspace{-.20em}---\hspace{-.20em}---} \\
+  II: \quad & & & \textbf{X}\dn{1} & \textbf{X}\dn{2}
+\end{tabular} \, .
+\end{equation*}
+
+
+
+
+
+\end{example}
