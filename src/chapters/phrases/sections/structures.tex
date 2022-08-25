@@ -138,7 +138,7 @@ If the underlying harmony accompanying each repetition does not follow such harm
 
 It is instructive to look through some short pieces and determine the types of structural devices used.
 
-\begin{example}[\bwv{933}]
+\begin{example}[\bwv{935}]
 Consider the Little Prelude in \textbf{d} minor from the Six Little Preludes, a \textit{binary} form prelude written in \raisebox{-3pt}{\lilypond[inline, staffsize=13]{\markup{\column{\line{\compound-meter #'(3 8)}}}}}. Table \ref{} shows the deconstruction the \textbf{A} section, which consists of 24 measures, into its constituent phrases. We first analyze the ``small-scale'' phrase structure.
 
 \begin{table}[h]
@@ -163,7 +163,7 @@ The first phrase is simultaneously an example of an antecedent-consequent struct
   II: \quad & & & \textbf{X}\dn{1} & \textbf{X}\dn{2}
 \end{tabular}\,.
 \end{equation*}
-In this structure, the basic idea \textbf{X} consists of a thematic motif, which we refer to as \textbf{m}\dn{1}. The next phrase is best thought of as a short harmonic sequence consisting of two pairs, taking the form
+In this structure, the basic idea \textbf{X} consists of a thematic motive, which we refer to as \textbf{m}\dn{1}. The next phrase is best thought of as a short harmonic sequence consisting of two pairs, taking the form
 \begin{equation*}
 \begin{tabular}{rcc|cc||}
   I: \quad & \textbf{X}\dn{1} & \textbf{Y}\dn{1} & \textbf{X}\dn{2} & \textbf{Y}\dn{2}
@@ -185,15 +185,62 @@ The abstract progression involves upwards bass motion of a fourth and an overall
   \end{lilypond} \raisebox{17.5pt}{.}
   \vspace{-10pt}
 \end{center}
-In each pair, \textbf{X} and \textbf{Y} are based from the primary motif, with \textbf{X} being related to \textbf{m}\dn{1} by inversion. The astute listener will notice that \textbf{X}\dn{2} is not merely a transposition of \textbf{X}\dn{1} down by step; this alternative is in fact \textit{more} desirable as it maintains melodic continuity with the previous pair, strengthens the harmony by including the seventh, and provides a sense of finality to the two-unit sequence, so as to not let it draw on past its harmonic goal.
+In each pair, \textbf{X} and \textbf{Y} are based from the primary motive, with \textbf{X} being related to \textbf{m}\dn{1} by inversion. The astute listener will notice that \textbf{X}\dn{2} is not merely a transposition of \textbf{X}\dn{1} down by step; this alternative is in fact \textit{more} desirable as it maintains melodic continuity with the previous pair, strengthens the harmony by including the seventh, and provides a sense of finality to the two-unit sequence, so as to not let it draw on past its harmonic goal.
 
-The next two phrases form an imitatitive structure, with each phrase itself being a harmonic sequence consisting of four subunits. The two phrases may be written in the form
+The next two phrases form an imitatitive structure, with the first phrase being a harmonic sequence consisting of four subunits, and the second being a melodic sequence of four subunits as well. The two phrases may be written in the form
 \begin{equation*}
 \begin{tabular}{rccc|ccc||}
 I: \quad & \textbf{X}\dn{1} &  $\cdots$\! & \textbf{X}\dn{4} & \textbf{Y}\dn{1}\!\!\up{*} &  $\cdots$\! & \textbf{Y}\dn{4}\!\!\up{*} \\
 II: \quad & \textbf{Y}\dn{1} &  $\cdots$\! & \textbf{Y}\dn{4} & \textbf{X}\dn{1}\!\!\up{*} &  $\cdots$\! & \textbf{X}\dn{4}\!\!\up{*}\\
 \end{tabular} \, ,
 \end{equation*}
-where both parts are imitated at the interval of the octave. 
+where both parts are imitated at the interval of the octave. The abstract progression for the harmonic sequence can be written as
+\begin{center}
+  \begin{lilypond}[staffsize=16]
+    \new Staff \with {
+      \remove "Clef_engraver"
+      \remove "Time_signature_engraver"
+    }
+    <<
+    \relative { \clef bass \override Stem #'transparent = ##t d4 b \parenthesize c8}
+    \figures {
+      <6 3>4 <5 3>
+    }
+    >>
+  \end{lilypond} \raisebox{20.5pt}{.}
+\end{center}
+respectively. This progression is an elaboration of a series of parallel \figured{6,3} chords, a technique known as \textit{fauxbourdon}.
+
+The latter phrase begins by exchanging the two parts, but cannot be considered a harmonic sequence as the soprano is modified in the second half of the phrase. Simply imitating the bass in mm. 11--12 would instead produce a weaker result. To see why, note first that the at the start of the phrase the bass is actually compound, consisting of two voices. The tenor descends from \degree{2} to \degree{7}, but does not resolve to \degree{1}(which would cause parallel octaves). Instead the tenor continues to descend to \textbf{e}$\flat$, thereby implying a dominant harmony, which proceeds to tonicize \textbf{B}$\flat$ via a deceptive resolution to a \textbf{g} minor. When imitating this part in the second phrase, an authentic cadence in \textbf{F} is reached by modifying the soprano(previously tenor) line to imply a tonic pedal of sorts, which
+\begin{figure}[h]
+\centering
+\begin{minipage}[b]{.45\textwidth}
+\begin{lilypond}[staffsize=16]
+  \language "english"
+  global = {\key d \minor \time 3/8 \clef alto}
+  <<
+  \relative {\global r8 g'4 ~g8 f4 ~f8 e4 r8}
+  \\
+  \relative {\global bf4 g8 a4 f8 g4 e8 f8}
+  >>resolves
+\end{lilypond}\,\raisebox{13pt}{.}
+\vspace{1pt}
+\end{minipage}
+\begin{minipage}[b]{.45\textwidth}
+\begin{lilypond}[staffsize=16]
+  \language "english"
+  global = {\key d \minor \time 3/8 \clef treble}
+  <<
+  \relative {\global r8 g''4 ~g8 f4 ~f8 f4 ~f8 f4 \bar ""}
+  \\
+  \relative {\global bf'4 g8 a4 f8 d'4 bf8 c4 a8 \bar ""}
+  >>
+\end{lilypond}\,\raisebox{9.5pt}{.}
+\vspace{3pt}
+\end{minipage}
+\caption{The modification of a harmonic sequence to reach a desired harmonic goal. \BWV{935}}
+\end{figure}
+
+The fifth phrase mostly consists of a figuration built from a descending scale, which we will refer to as \textbf{m}\dn{2}. The figuration is not repeated at a consistent interval of transposition, but is instead fit to the underlying harmony. The final phrase again is an antecedent-consequenct structure as seen in the beginning of the piece, but lacking imitation. The basic idea \textbf{X} consists of the original motive \textbf{m}\dn{1}; in counterpoint with it is the inversion of \textbf{m}\dn{1} found in the third and fourth phrases. The consequent consists of a descending scalar motion resembling \textbf{m}\dn{2}, achieving a sense of motivic unity before the final cadence.
 
 \end{example}
