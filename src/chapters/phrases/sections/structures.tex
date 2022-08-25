@@ -105,9 +105,9 @@ The overall harmonic progression of a sequence depends on the \say{relative} or 
       \remove "Time_signature_engraver"
     }
     <<
-    \relative { \clef bass \override Stem #'transparent = ##t s4 d b s8 }
+    \relative { \clef bass \override Stem #'transparent = ##t d4 b \parenthesize c8}
     \figures {
-      s4 <6 3>4 <6 5 3>4
+      <6 3>4 <6 5 3>
     }
     >>
   \end{lilypond} \raisebox{27.5pt}{.}
@@ -148,24 +148,52 @@ Consider the Little Prelude in \textbf{d} minor from the Six Little Preludes, a 
 \hline\hline
   & \multicolumn{2}{c|}{measures} & cadence & remarks \\ \hline
 1 & 1 & 4\up{+}   & \degree{4} -- \degree{3}  & \\ \hline
-2 & 5 & 9         & \degree{7} -- \degree{1}  & cadence on m. 8; no elision \\ \hline
-3 & 9 & 13        &	\degree{7} -- \degree{1}	&	cadence on m. 12; no elision; \textbf{e}$\flat$ introduced to tonicize \textbf{B}$\flat$  \\ \hline
-4 & 13 & 17       &	\degree{4} -- \degree{3}	& cadence on m. 16; no elision	\\ \hline
-5 & 17 & 21\up{+} &	\degree{7} -- \degree{1}	&	\\ \hline
+2 & 5 & 8         & \degree{5} -- \degree{1}  & cadence on m. 8; no elision \\ \hline
+3 & 9 & 12        &	\degree{7} -- \degree{1}	&	cadence on m. 12; no elision; \textbf{e}$\flat$ introduced to tonicize \textbf{B}$\flat$  \\ \hline
+4 & 13 & 16       &	\degree{4} -- \degree{3}	& cadence on m. 16; no elision	\\ \hline
+5 & 17 & 20\up{+} &	\degree{7} -- \degree{1}	&	\\ \hline
 6 & 21 & 24       &	\cellcolor{gray!50}	&	authentic cadence; scalar motion from \degree{5} to \degree{1} in the bass \\ \hline
 \end{tabular}
 \end{table}
 
-The first phrase is simultaneously an example of an antecedent-consequent structure and an imitatitive structure, which may be diagrammed as
+The first phrase is simultaneously an example of an antecedent-consequent structure and an imitative structure, which may be diagrammed as
 \begin{equation*}
 \begin{tabular}{rcc|cc||}
   I: \quad & \textbf{X}\dn{1} & \textbf{X}\dn{2} & \multicolumn{2}{c||}{\textbf{Y} ---\hspace{-.20em}---\hspace{-.20em}---} \\
   II: \quad & & & \textbf{X}\dn{1} & \textbf{X}\dn{2}
-\end{tabular} \, .
+\end{tabular}\,.
 \end{equation*}
+In this structure, the basic idea \textbf{X} consists of a thematic motif, which we refer to as \textbf{m}\dn{1}. The next phrase is best thought of as a short harmonic sequence consisting of two pairs, taking the form
+\begin{equation*}
+\begin{tabular}{rcc|cc||}
+  I: \quad & \textbf{X}\dn{1} & \textbf{Y}\dn{1} & \textbf{X}\dn{2} & \textbf{Y}\dn{2}
+\end{tabular}\,.
+\end{equation*}
+The abstract progression involves upwards bass motion of a fourth and an overall motion down by step, an example of a \textit{circle of fifths} progression:
+\begin{center}
+  \begin{lilypond}[staffsize=16]
+    \new Staff \with {
+      \remove "Clef_engraver"
+      \remove "Time_signature_engraver"
+    }
+    <<
+    \relative { \clef bass \override Stem #'transparent = ##t d4 g \parenthesize c,8}
+    \figures {
+      <7>4 <7>
+    }
+    >>
+  \end{lilypond} \raisebox{17.5pt}{.}
+  \vspace{-10pt}
+\end{center}
+In each pair, \textbf{X} and \textbf{Y} are based from the primary motif, with \textbf{X} being related to \textbf{m}\dn{1} by inversion. The astute listener will notice that \textbf{X}\dn{2} is not merely a transposition of \textbf{X}\dn{1} down by step; this alternative is in fact \textit{more} desirable as it maintains melodic continuity with the previous pair, strengthens the harmony by including the seventh, and provides a sense of finality to the two-unit sequence, so as to not let it draw on past its harmonic goal.
 
-
-
-
+The next two phrases form an imitatitive structure, with each phrase itself being a harmonic sequence consisting of four subunits. The two phrases may be written in the form
+\begin{equation*}
+\begin{tabular}{rccc|ccc||}
+I: \quad & \textbf{X}\dn{1} &  $\cdots$\! & \textbf{X}\dn{4} & \textbf{Y}\dn{1}\!\!\up{*} &  $\cdots$\! & \textbf{Y}\dn{4}\!\!\up{*} \\
+II: \quad & \textbf{Y}\dn{1} &  $\cdots$\! & \textbf{Y}\dn{4} & \textbf{X}\dn{1}\!\!\up{*} &  $\cdots$\! & \textbf{X}\dn{4}\!\!\up{*}\\
+\end{tabular} \, ,
+\end{equation*}
+where both parts are imitated at the interval of the octave. 
 
 \end{example}
